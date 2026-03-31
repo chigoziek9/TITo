@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
 import { X } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { Link } from "react-router";
+
 
 interface ServiceModalProps {
   service: any;
@@ -132,12 +134,12 @@ export function ServiceModal({ service, onClose }: ServiceModalProps) {
 
             {/* CTA Button */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="flex-1 bg-[#D4932D] hover:bg-[#C2841F] text-white px-6 py-3 text-center font-medium transition-colors rounded-lg"
               >
                 Request a Quote
-              </a>
+              </Link>
               <button
                 onClick={onClose}
                 className="flex-1 border-2 border-gray-300 hover:bg-gray-50 text-gray-700 px-6 py-3 font-medium transition-colors rounded-lg"
