@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Hammer, Package, FileCheck, Wrench, Building, Truck } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import { Link } from "react-router";
 
 const contractingServices = [
   {
@@ -249,18 +250,18 @@ export function GeneralContractingServices({
               that exceeds your expectations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-block bg-[#D4932D] hover:bg-[#C2841F] text-white px-8 py-4 font-medium transition-colors rounded-lg"
               >
                 Request a Free Quote
-              </a>
-              <a
-                href="/projects"
+              </Link>
+              <Link
+                to="/projects"
                 className="inline-block bg-white hover:bg-gray-100 text-[#0A0F1E] px-8 py-4 font-medium transition-colors rounded-lg"
               >
                 View Our Projects
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
