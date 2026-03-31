@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Building, Users, Clock, MapPin } from "lucide-react";
+import { Link } from "react-router";
 
 const categories = ["All", "Office", "Hotel", "Residential", "Corporate"];
 
@@ -9,7 +10,8 @@ const projects = [
     title: "Lagos Corporate Hub",
     category: "Office",
     location: "Victoria Island, Lagos",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
     description:
       "Complete office fit-out for a leading fintech company. 500+ workstations with premium ergonomic furniture.",
   },
@@ -17,7 +19,8 @@ const projects = [
     title: "Executive Office Suite",
     category: "Corporate",
     location: "Ikoyi, Lagos",
-    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
     description:
       "Luxury executive office renovation featuring custom-made furniture and sophisticated lighting.",
   },
@@ -25,7 +28,8 @@ const projects = [
     title: "Luxury Hotel Renovation",
     category: "Hotel",
     location: "Lekki, Lagos",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80",
     description:
       "Complete furniture supply and installation for 50-room boutique hotel including lobby and restaurant.",
   },
@@ -33,7 +37,8 @@ const projects = [
     title: "Modern Workspace Design",
     category: "Office",
     location: "Ikeja, Lagos",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
     description:
       "Contemporary open-plan office design with collaborative spaces and private meeting rooms.",
   },
@@ -41,7 +46,8 @@ const projects = [
     title: "Residential Interior",
     category: "Residential",
     location: "Banana Island, Lagos",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
     description:
       "High-end residential project featuring custom furniture and complete interior decoration.",
   },
@@ -49,7 +55,8 @@ const projects = [
     title: "Tech Startup Office",
     category: "Office",
     location: "Yaba, Lagos",
-    image: "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80",
     description:
       "Creative workspace for tech startup with flexible furniture and vibrant design elements.",
   },
@@ -88,9 +95,8 @@ export function Projects() {
               OUR PROJECTS
             </motion.div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Delivering{" "}
-              <span className="text-[#D4932D]">Excellence</span>, Exceeding
-              Expectations
+              Delivering <span className="text-[#D4932D]">Excellence</span>,
+              Exceeding Expectations
             </h1>
             <p className="text-gray-300 text-lg sm:text-xl leading-relaxed">
               Founded in 2024, TITO NIG LTD provides sophisticated bespoke
@@ -141,8 +147,8 @@ export function Projects() {
               Our Work & Capabilities
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-              From premium workstations to executive offices, we've equipped Nigeria's
-              leading businesses with style and functionality.
+              From premium workstations to executive offices, we've equipped
+              Nigeria's leading businesses with style and functionality.
             </p>
 
             {/* Category Filter */}
@@ -208,7 +214,9 @@ export function Projects() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">WHO WE SERVE</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              WHO WE SERVE
+            </h2>
             <div className="w-20 h-1 bg-[#D4932D] mx-auto" />
           </motion.div>
 
@@ -264,10 +272,13 @@ export function Projects() {
               </span>
             </div>
             <blockquote className="text-xl sm:text-2xl font-medium italic mb-6">
-              "The team at TITO NIG LTD transformed our workspace into a functional
-              masterpiece. Their attention to detail is truly unparalleled in Lagos."
+              "The team at TITO NIG LTD transformed our workspace into a
+              functional masterpiece. Their attention to detail is truly
+              unparalleled in Lagos."
             </blockquote>
-            <div className="text-gray-400">— Corporate Client, Victoria Island</div>
+            <div className="text-gray-400">
+              — Corporate Client, Victoria Island
+            </div>
           </motion.div>
         </div>
       </section>
@@ -286,15 +297,16 @@ export function Projects() {
               Ready to Start Your Project?
             </h2>
             <p className="text-gray-600 mb-8 text-lg">
-              Let's discuss how we can bring your vision to life with our expert team
-              and quality products.
+              Let's discuss how we can bring your vision to life with our expert
+              team and quality products.
             </p>
-            <a
-              href="/contact"
+           
+            <Link
+              to="/contact"
               className="inline-block bg-[#D4932D] hover:bg-[#C2841F] text-white px-8 py-4 font-medium transition-colors"
             >
               Contact Us Today
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>
