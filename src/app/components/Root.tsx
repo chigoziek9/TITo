@@ -2,10 +2,14 @@ import { Outlet } from "react-router";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { FloatingButtons } from "./FloatingButtons";
+import ScrollToTop from "./ScrollToTop";
+
+
 
 export function Root() {
   return (
     <div className="min-h-screen flex flex-col">
+       <ScrollToTop /> 
       <Header />
       <main className="flex-1">
         <Outlet />
