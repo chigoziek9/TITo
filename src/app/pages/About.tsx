@@ -20,6 +20,8 @@ import {
   FileCheck,
   Lightbulb,
 } from "lucide-react";
+import { Link } from "react-router";
+
 
 const coreValues = [
   {
@@ -468,18 +470,18 @@ export function About() {
               your project and experience the TITO difference.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-block bg-[#D4932D] hover:bg-[#C2841F] text-white px-8 py-4 font-medium transition-colors"
               >
                 Get In Touch
-              </a>
-              <a
-                href="/services"
+              </Link>
+              <Link
+                to="/services"
                 className="inline-block border-2 border-[#D4932D] hover:bg-[#D4932D] hover:text-white text-[#D4932D] px-8 py-4 font-medium transition-colors"
               >
                 View Our Services
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

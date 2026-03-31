@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Globe, Wrench, Clock } from "lucide-react";
+import { Link } from "react-router";
 
 const reasons = [
   {
@@ -76,22 +77,23 @@ export function WhyChooseSection() {
               Ready to Transform Your Space?
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto text-sm sm:text-base">
-              Join the ranks of Lagos's most progressive businesses and offices. Let's
-              build your vision together.
+              Join the ranks of Lagos's most progressive businesses and offices.
+              Let's build your vision together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-block bg-[#D4932D] hover:bg-[#C2841F] text-white px-8 py-3 font-medium transition-colors"
+             
+              <Link
+                to="/contact"
+                className="inline-block bg-[#D4932D] hover:bg-[#C2841F] text-white px-8 py-4 font-medium transition-colors"
               >
                 Request a Free Quote
-              </a>
-              <a
-                href="/projects"
+              </Link>
+              <Link
+                to="/projects"
                 className="inline-block bg-white hover:bg-gray-100 text-black px-8 py-3 font-medium transition-colors"
               >
                 View Our Projects
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>
