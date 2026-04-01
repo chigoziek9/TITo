@@ -42,10 +42,15 @@ export function Header() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-black text-white px-2 py-1 text-xs sm:text-sm font-bold transition-transform group-hover:scale-105">
+            <img
+              src="/logo.png"
+              alt="TITO NIG LTD Logo"
+              className="h-10 sm:h-15 w-auto object-contain transition-transform group-hover:scale-105"
+            />
+            {/* <div className="bg-black text-white px-2 py-1 text-xs sm:text-sm font-bold transition-transform group-hover:scale-105">
               TITO
-            </div>
-            <span className="font-bold text-base sm:text-lg">NIG LTD</span>
+            </div> */}
+            <span className="font-bold text-base sm:text-lg">TITO NIG LTD</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -61,12 +66,14 @@ export function Header() {
                 }`}
               >
                 {link.name}
-                {link.name === "Contact" && location.pathname === "/contact" && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#D4932D]" />
-                )}
-                {link.name === "Contact" && location.pathname !== "/contact" && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#D4932D] scale-x-0 group-hover:scale-x-100 transition-transform" />
-                )}
+                {link.name === "Contact" &&
+                  location.pathname === "/contact" && (
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#D4932D]" />
+                  )}
+                {link.name === "Contact" &&
+                  location.pathname !== "/contact" && (
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#D4932D] scale-x-0 group-hover:scale-x-100 transition-transform" />
+                  )}
               </Link>
             ))}
           </nav>
