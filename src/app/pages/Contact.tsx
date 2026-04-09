@@ -5,19 +5,29 @@ import { toast } from "sonner";
 
 export function Contact() {
   const [formData, setFormData] = useState({
-    fullName: "",
+    firstName: "",
+    lastName: "",
+    email: "",
     phone: "",
     message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent successfully! We'll get back to you within 24 hours.");
-    setFormData({ fullName: "", phone: "", message: "" });
+    toast.success(
+      "Message sent successfully! We'll get back to you within 24 hours.",
+    );
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -50,12 +60,12 @@ export function Contact() {
               GET IN TOUCH
             </motion.div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Let's Build Your{" "}
-              <span className="text-[#D4932D]">Vision</span> Together.
+              Let's Build Your <span className="text-[#D4932D]">Vision</span>{" "}
+              Together.
             </h1>
             <p className="text-gray-300 text-lg sm:text-xl leading-relaxed">
-              Have a project in mind? Fill out the form below and our team will get
-              back to you within 24 hours.
+              Have a project in mind? Fill out the form below and our team will
+              get back to you within 24 hours.
             </p>
           </motion.div>
         </div>
@@ -160,7 +170,9 @@ export function Contact() {
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-400" />
                   <div className="relative z-10 text-center">
                     <MapPin className="w-12 h-12 text-[#D4932D] mx-auto mb-2" />
-                    <p className="text-gray-700 font-medium">Mangoro, Lagos State</p>
+                    <p className="text-gray-700 font-medium">
+                      Mangoro, Lagos State
+                    </p>
                   </div>
                 </div>
               </div>
@@ -176,26 +188,44 @@ export function Contact() {
             >
               <h2 className="text-3xl font-bold mb-6">Send us a Message</h2>
               <p className="text-gray-600 mb-8">
-                Have a project in mind? Fill out the form below and our team will get
-                back to you within 24 hours.
+                Have a project in mind? Fill out the form below and our team
+                will get back to you within 24 hours.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label
-                      htmlFor="fullName"
+                      htmlFor="firstName"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
-                      FULL NAME
+                      FIRST NAME
                     </label>
                     <input
                       type="text"
-                      id="fullName"
-                      name="fullName"
-                      value={formData.fullName}
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
                       onChange={handleChange}
-                      placeholder="John Doe"
+                      placeholder="John"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4932D] focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="lastName"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      LAST NAME
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      placeholder="Doe"
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4932D] focus:border-transparent"
                     />
@@ -215,6 +245,24 @@ export function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+234 000 000 0000"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4932D] focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      EMAIL ADDRESS
+                    </label>
+                    <input
+                      type="text"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="davidson123@gmail.com"
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4932D] focus:border-transparent"
                     />
@@ -286,9 +334,9 @@ export function Contact() {
 
               <div className="flex-1 text-center md:text-left">
                 <p className="text-lg sm:text-xl italic mb-4">
-                  "The team at TITO NIG LTD transformed our workspace into a functional
-                  masterpiece. Their attention to detail is truly unparalleled in
-                  Lagos."
+                  "The team at TITO NIG LTD transformed our workspace into a
+                  functional masterpiece. Their attention to detail is truly
+                  unparalleled in Lagos."
                 </p>
                 <p className="text-gray-400">— Corporate Client</p>
               </div>
