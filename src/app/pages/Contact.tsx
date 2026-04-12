@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "motion/react";
 import { MapPin, Phone, Mail, MessageCircle, Clock, Users } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 
 export function Contact() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -14,16 +17,38 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success(
-      "Message sent successfully! We'll get back to you within 24 hours.",
-    );
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+
+    // Replace these with your actual EmailJS IDs
+    const SERVICE_ID = "service_k92b6gv";
+    const TEMPLATE_ID = "template_d35s9sn";
+    const PUBLIC_KEY = "FWBN8Ps1LwaU1tfqU";
+
+    if (formRef.current) {
+      emailjs
+        .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+        .then(
+          () => {
+            toast.success(
+              "Message sent successfully! We'll get back to you within 24 hours.",
+            );
+            setFormData({
+              firstName: "",
+              lastName: "",
+              email: "",
+              phone: "",
+              message: "",
+            });
+          },
+          (error) => {
+            toast.error("Failed to send message. Please try again later.");
+            console.error("EmailJS Error:", error);
+          },
+        )
+        .finally(() => {
+          setIsSubmitting(false);
+        });
+    }
   };
 
   const handleChange = (
@@ -192,7 +217,7 @@ export function Contact() {
                 will get back to you within 24 hours.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label
@@ -257,7 +282,7 @@ export function Contact() {
                       EMAIL ADDRESS
                     </label>
                     <input
-                      type="text"
+                      type="email"
                       id="email"
                       name="email"
                       value={formData.email}
@@ -290,9 +315,10 @@ export function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#0A0F1E] hover:bg-black text-white py-4 px-8 font-medium transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#0A0F1E] hover:bg-black text-white py-4 px-8 font-medium transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
 
                 <div className="flex items-center gap-2 text-sm text-gray-600">
