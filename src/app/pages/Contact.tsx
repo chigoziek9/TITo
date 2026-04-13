@@ -19,7 +19,6 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Replace these with your actual EmailJS IDs
     const SERVICE_ID = "service_k92b6gv";
     const TEMPLATE_ID = "template_d35s9sn";
     const PUBLIC_KEY = "FWBN8Ps1LwaU1tfqU";
@@ -189,16 +188,19 @@ export function Contact() {
                 </a>
               </div>
 
-              {/* Map */}
+              {/* Functional Map Section */}
               <div className="bg-white p-4 rounded-lg shadow-lg">
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-400" />
-                  <div className="relative z-10 text-center">
-                    <MapPin className="w-12 h-12 text-[#D4932D] mx-auto mb-2" />
-                    <p className="text-gray-700 font-medium">
-                      Mangoro, Lagos State
-                    </p>
-                  </div>
+                <div className="h-64 rounded-lg overflow-hidden border border-gray-100">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3670618759675!2d3.3189808793679356!3d6.6012239763560006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b919a27982cb7%3A0x29b76881dfc7096a!2s1%20Beco%20St%2C%20Idi%20Mangoro%2C%20Lagos%20101233%2C%20Lagos!5e0!3m2!1sen!2sng!4v1776090699603!5m2!1sen!2sng"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Tito Nig Ltd Location"
+                  ></iframe>
                 </div>
               </div>
             </motion.div>
